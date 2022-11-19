@@ -1,0 +1,34 @@
+require("@nomicfoundation/hardhat-toolbox")
+require("dotenv").config()
+require("@nomiclabs/hardhat-etherscan")
+require("./tasks/block-number")
+require("hardhat-gas-reporter")
+require("solidity-coverage")
+/** @type import('hardhat/config').HardhatUserConfig */
+
+module.exports = {
+    defaultNetwork: "hardhat", //default network written expliciely
+    networks: {
+        goerli: {
+            url: process.env.GOERLI_RPC_URL,
+            accounts: [process.env.PRIVATE_KEY],
+            chainId: 5,
+        },
+        localhost: {
+            url: "http://127.0.0.1:8545/",
+
+            chainId: 31337,
+        },
+    },
+    solidity: "0.8.8",
+    etherscan: {
+        apiKey: process.env.Etherscan_API_KEY, //to verify on etherscan
+    },
+    gasReporter: {
+        enabled: true, //by default output table
+        outputFile: "gas-report.txt",
+        noColors: true,
+        currency: "USD",
+        coinmarketcap: process.env.COINMARKETCAP_API_KEY,
+    },
+}

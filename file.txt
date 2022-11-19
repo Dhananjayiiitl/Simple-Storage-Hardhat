@@ -1,0 +1,25 @@
+yarn=npm
+yarn=npx
+1.run yarn add --dev hardhat
+2.run yarn hardhat(do yes to all)
+3.yarn hardhat run scripts/deploy.js-->run scripts/deploy.js
+4.yarn hardhat run scripts/deploy.js --network goerli(optional /default  run when not selected any)
+5.yarn hardhat node-->runs local hardhat like ganache
+//locally run network is different than hardhat though it uses hardhat runtime environment 
+6.yarn hardhat console --network localhost-->write code in console
+7.yarn hardhat test-->to run test code
+·----------------------------|----------------------------|----------------------|-----------------------------·
+|    Solc version: 0.8.8     ·  Optimizer enabled: false  ·  Runs: 200(gas used)  ·  Block limit: 30000000 gas │
+·····························|····························|·············---------|······························
+|  Methods                                                                                            │        |
+··················|··········|··············|·············|·············---------|···············|··············
+|  Contract       ·  Method  ·  Min         ·  Max        ·  Avg                 ·  # calls      ·  usd (avg)  │
+··················|··········|··············|·············|·············---------|···············|··············
+|  SimpleStorage  ·  store   ·           -  ·          -  ·      43724           ·            1  ·          -  │
+··················|··········|··············|·············|············---------·|···············|··············
+|  Deployments               ·                                                   ·  % of limit   ·             │
+·····························|··············|·············|···········---------··|···············|··············
+|  SimpleStorage             ·           -  ·          -  ·     474494           ·        1.6 %  ·          -  │
+·----------------------------|--------------|-------------|----------------------|---------------|-------------·
+8.yarn hardhat coverage-->to run the things in hardhat-coverage
+9.yarn hardhat clean --->to clean reset
